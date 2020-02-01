@@ -29,5 +29,7 @@ public class CountDown : MonoBehaviour
         TimerText.text = "GO!";
         yield return new WaitForSeconds(TimeBetweenClips);
         OnTimerComplete.Invoke();
+
+        GameController.Instance.LevelStart();
     }
 }

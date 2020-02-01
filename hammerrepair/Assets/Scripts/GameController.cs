@@ -41,7 +41,10 @@ public class GameController : Singleton<GameController>
         if(SceneManager.GetActiveScene().buildIndex != 0 )
         {
             nowGameState = GameState.WaitingLevelStart;
-            nowLevelIndex = SceneManager.GetActiveScene().buildIndex;
+            levelsList = new List<int>();
+            levelsList.Add(SceneManager.GetActiveScene().buildIndex);
+            nowLevelIndex = 1;
+
             GameObject startItem =  GameObject.Instantiate( Resources.Load<GameObject>("StartItem"));
             startItem.transform.SetParent(this.transform);
             mainUI = startItem.transform.Find("MainUI").GetComponent<Canvas>();
@@ -75,12 +78,13 @@ public class GameController : Singleton<GameController>
                 if (SceneManager.GetActiveScene().isLoaded)
                 {
                     CloseAllUI();
-                    timer.gameObject.SetActive(true);
+                    //timer.gameObject.SetActive(true);
                     nowGameState = GameState.WaitingLevelStart;
                 }
                 break;
 
             case GameState.WaitingLevelStart:
+                timer.gameObject.SetActive(true);
                 break;
 
 
@@ -102,6 +106,13 @@ public class GameController : Singleton<GameController>
                 break;
             case GameState.GameLose:
                 GameLose();
+                if (Input.anyKeyDown)
+                {
+                    CloseAllUI();
+                    menu.SetActive(true);
+                    nowGameState = GameState.Menu;
+                    nowLevelIndex = 0;
+                }
                 break;
             default:
                 break;
@@ -122,10 +133,11 @@ public class GameController : Singleton<GameController>
         nowLevelManager = levelManager;
 
         nowCountDown = nowLevelManager.time;
+        Debug.Log("nowCountDown:" + nowCountDown);
         timer.text = ((int)nowCountDown).ToString();
     }
 
-    public void LevelStart(int levelTime)
+    public void LevelStart()
     {
         nowGameState = GameState.OnLevel;
     }
