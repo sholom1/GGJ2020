@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
@@ -30,5 +28,10 @@ public class Trigger : MonoBehaviour
         Debug.Log("Enabled");
         Letter.text = RequiredKey.ToString();
         OnEnabled.Invoke();   
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, 1000);
     }
 }
