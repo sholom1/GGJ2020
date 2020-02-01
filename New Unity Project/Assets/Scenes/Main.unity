@@ -766,11 +766,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1753429943}
-        m_MethodName: 
+        m_MethodName: TestPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -778,8 +778,19 @@ MonoBehaviour:
         m_CallState: 2
   OnReleased:
     m_PersistentCalls:
-      m_Calls: []
-  RequiredKey: 0
+      m_Calls:
+      - m_Target: {fileID: 1753429943}
+        m_MethodName: TestRelease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  RequiredKey: 97
 --- !u!65 &1753429944
 BoxCollider:
   m_ObjectHideFlags: 0
