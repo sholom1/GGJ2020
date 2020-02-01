@@ -9,6 +9,6 @@ public class LevelManager : MonoBehaviour
     public void LoadScene(int index)
     {
         LodingScreen.SetActive(true);
-        SceneManager.LoadSceneAsync(index);
+        SceneManager.LoadScene(index);
     }
 }
