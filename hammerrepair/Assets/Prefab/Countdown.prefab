@@ -270,7 +270,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 95298a72c532b0a419b88962279ec1b6, type: 3}
   - {fileID: 8300000, guid: 95298a72c532b0a419b88962279ec1b6, type: 3}
   - {fileID: 8300000, guid: 95298a72c532b0a419b88962279ec1b6, type: 3}
-  TimeBetweenClips: 1
+  TimeBetweenClips: 0.1
   TimerText: {fileID: 1887102755281878898}
   OnTimerComplete:
     m_PersistentCalls:
