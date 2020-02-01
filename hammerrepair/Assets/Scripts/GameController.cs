@@ -10,16 +10,18 @@ public class GameController : Singleton<GameController>
 
     public Canvas mainUI;
     public Text timer;
-    public GameObject loadingImage;
+    public GameObject mainUIBackgroundGO;
+    public GameObject loadingGO;
 
     private enum GameState
     {
-        Start,
+        Menu,
         LoadingLevel,
+        WaitingLevelStart,
         OnLevel,
         WinLevel,
-        Win,
-        Lose,
+        GameWin,
+        GameLose,
     }
 
     private GameState nowGameState;
@@ -30,10 +32,15 @@ public class GameController : Singleton<GameController>
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        DontDestroyOnLoad(mainUI.gameObject);
 
-        nowGameState = GameState.Start;
+        nowGameState = GameState.Menu;
         nowLevelIndex = 0;
+
+        if(SceneManager.GetActiveScene().buildIndex != 0 )
+        {
+            nowGameState = GameState.WaitingLevelStart;
+            nowLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        }
     }
 
     // Update is called once per frame
@@ -41,29 +48,37 @@ public class GameController : Singleton<GameController>
     {
         switch(nowGameState)
         {
-            case GameState.Start:
+            case GameState.Menu:
                 if(Input.anyKeyDown)
                 {
-                    SceneManager.LoadScene(levelsList[nowLevelIndex]);
-                    nowGameState = GameState.LoadingLevel;
+                    //GameStart();
                 }
                 break;
 
             case GameState.LoadingLevel:
+                if (!loadingGO.activeSelf)
+                {
+                    loadingGO.SetActive(true);
+                }
+
                 if (SceneManager.GetActiveScene().isLoaded)
                 {
-                    nowGameState = GameState.OnLevel;
+                    loadingGO.SetActive(false);
+                    timer.gameObject.SetActive(true);
+                    nowGameState = GameState.WaitingLevelStart;
                 }
                 break;
 
+            case GameState.WaitingLevelStart:
+                break;
+
+
             case GameState.OnLevel:
-
-
                 nowCountDown -= Time.deltaTime;
                 if (nowCountDown <= 0)
                 {
                     timer.text = "0";
-                    nowGameState = GameState.Lose;
+                    nowGameState = GameState.GameLose;
                 }
                 else
                     timer.text = ((int)nowCountDown).ToString();
@@ -72,14 +87,22 @@ public class GameController : Singleton<GameController>
 
             case GameState.WinLevel:
                 break;
-            case GameState.Win:
+            case GameState.GameWin:
                 break;
-            case GameState.Lose:
+            case GameState.GameLose:
                 break;
             default:
                 break;
         }
 
+    }
+
+    public void GameStart()
+    {
+        mainUIBackgroundGO.SetActive(false);
+        loadingGO.SetActive(true);
+        SceneManager.LoadScene(levelsList[nowLevelIndex]);
+        nowGameState = GameState.LoadingLevel;
     }
 
     public void SetLevelData(int levelTime)
@@ -88,18 +111,28 @@ public class GameController : Singleton<GameController>
         timer.text = ((int)nowCountDown).ToString();
     }
 
-    public void StartLevel(int levelTime)
+    public void LevelStart(int levelTime)
     {
         nowGameState = GameState.OnLevel;
     }
 
-    public void WinLevel()
+    public void LevelWin()
     {
         if (nowCountDown >= 0.0f)
         {
             GoToNextLevel();
         }
     }
+
+    public void GameWin()
+    {
+    }
+
+    public void GameLose()
+    {
+        nowGameState = GameState.GameLose;
+    }
+
 
     private void GoToNextLevel()
     {
@@ -109,7 +142,7 @@ public class GameController : Singleton<GameController>
             nowGameState = GameState.LoadingLevel;
         }
         else
-            nowGameState = GameState.OnLevel;
+            nowGameState = GameState.GameWin;
 
     }
 }
