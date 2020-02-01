@@ -10,7 +10,7 @@ public class GameController : Singleton<GameController>
 
     public Canvas mainUI;
     public Text timer;
-    public GameObject mainUIBackgroundGO;
+    public GameObject menu;
     public GameObject loadingGO;
 
     private enum GameState
@@ -28,8 +28,10 @@ public class GameController : Singleton<GameController>
     private int nowLevelIndex;
     private float nowCountDown = 3;
 
+    private LevelManager nowLevelManager;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
 
@@ -40,6 +42,15 @@ public class GameController : Singleton<GameController>
         {
             nowGameState = GameState.WaitingLevelStart;
             nowLevelIndex = SceneManager.GetActiveScene().buildIndex;
+            GameObject startItem =  GameObject.Instantiate( Resources.Load<GameObject>("StartItem"));
+            startItem.transform.SetParent(this.transform);
+            mainUI = startItem.transform.Find("MainUI").GetComponent<Canvas>();
+            timer = startItem.transform.Find("MainUI/Timer").GetComponent<Text>();
+            menu = startItem.transform.Find("MainUI/Menu").gameObject;
+            loadingGO = startItem.transform.Find("MainUI/Loading").gameObject;
+            
+            CloseAllUI();
+            timer.gameObject.SetActive(true);
         }
     }
 
@@ -63,7 +74,7 @@ public class GameController : Singleton<GameController>
 
                 if (SceneManager.GetActiveScene().isLoaded)
                 {
-                    loadingGO.SetActive(false);
+                    CloseAllUI();
                     timer.gameObject.SetActive(true);
                     nowGameState = GameState.WaitingLevelStart;
                 }
@@ -90,6 +101,7 @@ public class GameController : Singleton<GameController>
             case GameState.GameWin:
                 break;
             case GameState.GameLose:
+                GameLose();
                 break;
             default:
                 break;
@@ -99,15 +111,17 @@ public class GameController : Singleton<GameController>
 
     public void GameStart()
     {
-        mainUIBackgroundGO.SetActive(false);
+        menu.SetActive(false);
         loadingGO.SetActive(true);
         SceneManager.LoadScene(levelsList[nowLevelIndex]);
         nowGameState = GameState.LoadingLevel;
     }
 
-    public void SetLevelData(int levelTime)
+    public void SetLevelData(LevelManager levelManager)
     {
-        nowCountDown = levelTime;
+        nowLevelManager = levelManager;
+
+        nowCountDown = nowLevelManager.time;
         timer.text = ((int)nowCountDown).ToString();
     }
 
@@ -120,6 +134,7 @@ public class GameController : Singleton<GameController>
     {
         if (nowCountDown >= 0.0f)
         {
+            nowLevelManager.WinLevel();
             GoToNextLevel();
         }
     }
@@ -130,6 +145,7 @@ public class GameController : Singleton<GameController>
 
     public void GameLose()
     {
+        nowLevelManager.LoseLevel();
         nowGameState = GameState.GameLose;
     }
 
@@ -144,5 +160,12 @@ public class GameController : Singleton<GameController>
         else
             nowGameState = GameState.GameWin;
 
+    }
+
+    private void CloseAllUI()
+    {
+        timer.gameObject.SetActive(false);
+        menu.SetActive(false);
+        loadingGO.SetActive(false);
     }
 }

@@ -1,22 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
-    private void Awake()
+    public int time = 10;
+    public UnityEvent Win;
+    public UnityEvent Lose;
+
+    void Start()
     {
-        if (instance == null)
-            instance = this;
-        else if (instance != this)
-            Destroy(this);
+        GameController.Instance.SetLevelData(this);
     }
-    public GameObject LodingScreen;
-    public void LoadScene(int index)
+
+    public void WinLevel()
     {
-        LodingScreen.SetActive(true);
-        SceneManager.LoadScene(index);
+        Win.Invoke();
+    }
+
+    public void LoseLevel()
+    {
+        Lose.Invoke();
     }
 }
