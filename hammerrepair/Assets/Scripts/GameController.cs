@@ -51,7 +51,7 @@ public class GameController : Singleton<GameController>
             case GameState.Menu:
                 if(Input.anyKeyDown)
                 {
-                    GameStart();
+                    //GameStart();
                 }
                 break;
 
