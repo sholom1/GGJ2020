@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class Trigger : MonoBehaviour
 {
     public UnityEvent OnPressed;
+
+    public UnityEvent OnEnabled;
     public UnityEvent OnReleased;
     public KeyCode RequiredKey;
 
@@ -18,21 +20,10 @@ public class Trigger : MonoBehaviour
         else if (Input.GetKeyUp(RequiredKey))
         {
             OnReleased.Invoke();
-        }
+        }   
     }
-    public void TestPressed()
+    void OnEnable()
     {
-        Debug.Log("The key has been pressed");
+        OnEnabled.Invoke();
     }
-    public void TestRelease()
-    {
-        Debug.Log("The key has been released");
-    }
-}
-public class Leak
-{
-    public KeyCode RequiredKey;
-    public float TimeToExplode;
-    public float TimeToRepair;
-    public float TimeBetweenLeaks;
 }
