@@ -30,6 +30,6 @@ public class CountDown : MonoBehaviour
         yield return new WaitForSeconds(TimeBetweenClips);
         OnTimerComplete.Invoke();
 
-        GameController.Instance.LevelStart();
+        //GameController.Instance.LevelStart();
     }
 }

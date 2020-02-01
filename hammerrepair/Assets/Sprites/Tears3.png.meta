@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 7cba722c9ea7f7b41838318988d2eb70
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2588249057151343227
+    second: Tears3_0
+  - first:
+      213: 1175245728305830749
+    second: Tears3_1
+  - first:
+      213: 767660951298735284
+    second: Tears3_2
+  - first:
+      213: -2129706854950536002
+    second: Tears3_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -132,7 +144,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Tears3_0
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 569
+        width: 303
+        height: 1233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c8189c76199ab47924d1eedc4d9549
+      internalID: 2588249057151343227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tears3_1
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 48
+        width: 247
+        height: 1161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c98a711313339b4d915541adda62772
+      internalID: 1175245728305830749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tears3_2
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 616
+        width: 273
+        height: 1067
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd714e2c19606b54a8c0a4d99f983f99
+      internalID: 767660951298735284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tears3_3
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 0
+        width: 217
+        height: 1674
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c788572a6465b564e888f47abd0dfabd
+      internalID: -2129706854950536002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
