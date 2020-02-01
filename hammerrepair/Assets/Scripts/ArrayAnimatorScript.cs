@@ -1,14 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Image))]
 public class ArrayAnimatorScript : MonoBehaviour
 {
 
     public float animationWait;
     public Sprite[] AnimationArray;
-    private SpriteRenderer spriteComponent;
+    private Image image;
 
     public bool playOnStart = false;
     public bool repeatForever = false;
@@ -19,7 +19,7 @@ public class ArrayAnimatorScript : MonoBehaviour
 
     private void Awake()
     {
-        spriteComponent = GetComponent<SpriteRenderer>();
+        image = GetComponent<Image>();
     }
 
     void Start() {
@@ -50,12 +50,12 @@ public class ArrayAnimatorScript : MonoBehaviour
         do {
             foreach (Sprite sprite in AnimationArray)
             {
-                spriteComponent.sprite = sprite;
+                image.sprite = sprite;
                 yield return new WaitForSeconds(animationWait);
             }
         } while(repeatForever);
         if (removeOnFinish) {
-            spriteComponent.sprite = null;
+            image.sprite = null;
         }
         isAnimating = false;
     }

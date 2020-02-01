@@ -27,6 +27,7 @@ public class CountDown : MonoBehaviour
             yield return new WaitForSeconds(timer);
         }
         TimerText.text = "GO!";
+        yield return new WaitForSeconds(TimeBetweenClips);
         OnTimerComplete.Invoke();
     }
 }
