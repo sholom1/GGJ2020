@@ -10,7 +10,6 @@ public class GameController : Singleton<GameController>
 
     public Canvas mainUI;
     public Text timer;
-    public GameObject menu;
     public GameObject loadingGO;
 
     private enum GameState
@@ -35,6 +34,9 @@ public class GameController : Singleton<GameController>
     {
         DontDestroyOnLoad(this.gameObject);
 
+        if (GameController.Instance != this)
+            Destroy(this.transform.gameObject);
+
         nowGameState = GameState.Menu;
         nowLevelIndex = 0;
 
@@ -49,7 +51,6 @@ public class GameController : Singleton<GameController>
             startItem.transform.SetParent(this.transform);
             mainUI = startItem.transform.Find("MainUI").GetComponent<Canvas>();
             timer = startItem.transform.Find("MainUI/Timer").GetComponent<Text>();
-            menu = startItem.transform.Find("MainUI/Menu").gameObject;
             loadingGO = startItem.transform.Find("MainUI/Loading").gameObject;
             
             CloseAllUI();
@@ -109,7 +110,7 @@ public class GameController : Singleton<GameController>
                 if (Input.anyKeyDown)
                 {
                     CloseAllUI();
-                    menu.SetActive(true);
+                    SceneManager.LoadScene(0);
                     nowGameState = GameState.Menu;
                     nowLevelIndex = 0;
                 }
@@ -122,7 +123,6 @@ public class GameController : Singleton<GameController>
 
     public void GameStart()
     {
-        menu.SetActive(false);
         loadingGO.SetActive(true);
         SceneManager.LoadScene(levelsList[nowLevelIndex]);
         nowGameState = GameState.LoadingLevel;
@@ -177,7 +177,6 @@ public class GameController : Singleton<GameController>
     private void CloseAllUI()
     {
         timer.gameObject.SetActive(false);
-        menu.SetActive(false);
         loadingGO.SetActive(false);
     }
 }
