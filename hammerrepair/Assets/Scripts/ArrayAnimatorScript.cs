@@ -35,7 +35,10 @@ public class ArrayAnimatorScript : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(Animate());
     }
-
+    private void OnDisable()
+    {
+        Stop();
+    }
     public void Stop() {
         isAnimating = false;
         StopAllCoroutines();

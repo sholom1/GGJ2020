@@ -22,8 +22,9 @@ public class Trigger : MonoBehaviour
             OnReleased.Invoke();
         }   
     }
-    void OnEnable()
+    private void Awake()
     {
-        OnEnabled.Invoke();
+        Debug.Log("Enabled");
+        OnEnabled.Invoke();   
     }
 }
