@@ -84,6 +84,10 @@ public class GameController : Singleton<GameController>
             case GameState.WinLevel:
                 break;
             case GameState.GameWin:
+                SceneManager.LoadScene(0);
+                nowGameState = GameState.Menu;
+                nowLevelIndex = 0;
+
                 break;
             case GameState.GameLose:
                 GameLose();
