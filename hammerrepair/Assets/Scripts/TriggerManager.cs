@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class TriggerManager : MonoBehaviour
 {
     public List<Trigger> Triggers;
+    public List<Trigger> AntiTriggers;
     public int nextLevel;
     public UnityEvent OnWin;
     public bool RandomizeKeys = true;
@@ -24,9 +25,18 @@ public class TriggerManager : MonoBehaviour
     // - R, T, I, M
     private void Start()
     {
+        AddKeysToTriggers();
+    }
+
+    public void AddKeysToTriggers()
+    {
         if (RandomizeKeys)
         {
-            foreach (var trigger in Triggers)
+            var allTriggers = new List<Trigger>();
+            allTriggers.AddRange(Triggers);
+            allTriggers.AddRange(AntiTriggers);
+
+            foreach (var trigger in allTriggers)
             {
                 var poolSize = InputDictionary.instance.KeyPool.Count;
                 var requiredKey = InputDictionary.instance.KeyPool[Random.Range(0, poolSize)];
@@ -37,6 +47,7 @@ public class TriggerManager : MonoBehaviour
             }
         }
     }
+
     void LateUpdate()
     {
         var allKeysDown = true;
@@ -45,8 +56,24 @@ public class TriggerManager : MonoBehaviour
             var isKeyDown = Input.GetKey(trigger.RequiredKey);
             allKeysDown = allKeysDown && isKeyDown;
         }
+
+        foreach (var trigger in AntiTriggers)
+        {
+            var isKeyDown = Input.GetKey(trigger.RequiredKey);
+            allKeysDown = allKeysDown && !isKeyDown;
+        }
+
         if (allKeysDown) {
             Debug.Log("YOU WIN!!!");
+            //foreach (var trigger in Triggers)
+            //{
+            //    Debug.Log($"trigger ${trigger.name} is ${Input.GetKey(trigger.RequiredKey)}");
+            //}
+            //foreach (var trigger in AntiTriggers)
+            //{
+            //    Debug.Log($"anti-trigger ${trigger.name} is ${Input.GetKey(trigger.RequiredKey)}");
+            //}
+
             OnWin.Invoke();
         }
     }
