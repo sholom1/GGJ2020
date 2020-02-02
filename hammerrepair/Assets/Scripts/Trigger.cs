@@ -36,7 +36,7 @@ public class Trigger : MonoBehaviour
         Debug.Log("Enabled");
         if (Letter != null)
         {
-            Letter.text = RequiredKey.ToString();
+            Letter.text = RequiredKey.ToString().ToLower();
         }
         OnEnabled.Invoke();   
     }
