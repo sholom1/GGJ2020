@@ -21,6 +21,7 @@ public class Timer : MonoBehaviour
         nowTime = time +0.5f;
         timerText = GetComponent<TextMeshProUGUI>() ;
         timerText.text = ((int)time).ToString();
+        timerText.enabled = false;
     }
 
     // Update is called once per frame
@@ -42,6 +43,7 @@ public class Timer : MonoBehaviour
     public void StartTimer()
     {
         isCountDown = true;
+        timerText.enabled = true;
     }
 
     public void StopTimer()

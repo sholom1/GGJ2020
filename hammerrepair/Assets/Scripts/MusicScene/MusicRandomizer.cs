@@ -12,11 +12,11 @@ public class MusicRandomizer : MonoBehaviour
     void Start()
     {
         int bad1 = Random.Range(0,6);
-        int bad2;
-        do
-        {
-            bad2 = Random.Range(0,6);
-        } while (bad1 == bad2);
+        //int bad2;
+        //do
+        //{
+        //    bad2 = Random.Range(0,6);
+        //} while (bad1 == bad2);
 
         var triggerManager = EventSystem.GetComponent<TriggerManager>();
         var triggerList = triggerManager.Triggers;
@@ -25,7 +25,7 @@ public class MusicRandomizer : MonoBehaviour
         antiTriggerList.Clear();
 
         for (int i = 0; i< 6; i++) {
-            if ((i==bad1) || (i==bad2)) {
+            if (i==bad1) {
                 antiTriggerList.Add(Triggers[i]);
                 Debug.Log($"Added anti-trigger for bad tune ${Triggers[i].name}");
 
