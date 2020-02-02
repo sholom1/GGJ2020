@@ -31,7 +31,7 @@ public class TriggerManager : MonoBehaviour
             }
         }
     }
-    void Update()
+    void LateUpdate()
     {
         var allKeysDown = true;
         foreach (var trigger in Triggers)
