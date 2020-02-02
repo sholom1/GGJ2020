@@ -1405,7 +1405,7 @@ PrefabInstance:
     - target: {fileID: 2451288670604009408, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2451288670604009408, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
@@ -1517,6 +1517,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7938341504660508260, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: levelTime
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4972704879712056949, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_FontData.m_Alignment
@@ -1526,6 +1531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RaycastTarget
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088522426980374239, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4191852993957531422, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
@@ -1581,27 +1591,52 @@ PrefabInstance:
     - target: {fileID: 7816390704156146025, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7816390704156146025, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7816390704156146025, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7816390704156146025, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816390704156146025, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: m_fontColor.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816390704156146025, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816390704156146025, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7816390704156146025, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 8668157515875391057, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: time
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359182754623086245, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca199228ec1abb468fcd261448f64a2, type: 3}
@@ -2240,7 +2275,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.89211494, g: 0.916, b: 0.822568, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2829,7 +2864,7 @@ PrefabInstance:
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
@@ -3551,7 +3586,7 @@ PrefabInstance:
     - target: {fileID: 4496043266024339814, guid: a52d3cddd987aa24185c73b6d7ab462e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4496043266024339814, guid: a52d3cddd987aa24185c73b6d7ab462e,
         type: 3}
@@ -3781,7 +3816,7 @@ PrefabInstance:
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
@@ -4543,7 +4578,7 @@ PrefabInstance:
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
@@ -5305,14 +5340,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1901731778}
-  - {fileID: 372623941}
   - {fileID: 1934926777}
+  - {fileID: 372623941}
   - {fileID: 1705657108}
   - {fileID: 1630331061}
   - {fileID: 880904901}
   - {fileID: 830722589}
   - {fileID: 1481674217}
+  - {fileID: 1901731778}
   - {fileID: 1153497710}
   - {fileID: 784204428}
   m_Father: {fileID: 0}
@@ -5460,7 +5495,7 @@ PrefabInstance:
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
@@ -6547,7 +6582,7 @@ PrefabInstance:
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5895270084383640583, guid: 3cee2f84ca23046ceaf614ac18a5555a,
         type: 3}
