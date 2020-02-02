@@ -42,6 +42,7 @@ public class CountDown : MonoBehaviour
         TimerGUI.gameObject.SetActive(false);
         CircleUI.gameObject.SetActive(false);
         StartUI.gameObject.SetActive(true);
+        FindObjectOfType<LevelManager>().GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(TimeBetweenClips);
         OnTimerComplete.Invoke();
 

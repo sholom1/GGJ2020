@@ -367,6 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2451288670604009408}
   - component: {fileID: 7938341504660508260}
+  - component: {fileID: 2101591721165211588}
   m_Layer: 5
   m_Name: LevelManager
   m_TagString: Untagged

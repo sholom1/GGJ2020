@@ -16,6 +16,10 @@ public class TriggerManager : MonoBehaviour
     //
     // Valid key combos on jkachmar's computer (late 2016 MacBook Pro):
     // - R, U, Y, G
+    //Invalid key combos on Sam's computer (Windows 10 Dell Laptop):
+    // - Y, G, M, H
+    // - Y, T, J, V
+    // - Y, T, J, M
     private void Start()
     {
         if (RandomizeKeys)
