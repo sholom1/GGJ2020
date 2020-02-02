@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -144,18 +144,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5aa0c48f0e2806469f199e704be7d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &315286170 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7166825832022158687, guid: 0ca199228ec1abb468fcd261448f64a2,
+--- !u!1 &210981631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2595339486051916529, guid: 0ca199228ec1abb468fcd261448f64a2,
     type: 3}
   m_PrefabInstance: {fileID: 1782413080}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &210981635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210981631}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515a9ddc75e062d49bc4076ada6ba593, type: 3}
+  m_Script: {fileID: 11500000, guid: 3917fe906740a1d4988c87663cf78230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateSpeed: 1
 --- !u!1001 &562692619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -551,6 +558,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 219705995, guid: a52d3cddd987aa24185c73b6d7ab462e, type: 3}
+      propertyPath: KeyPool.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 219705995, guid: a52d3cddd987aa24185c73b6d7ab462e, type: 3}
+      propertyPath: KeyPool.Array.data[0]
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 219705995, guid: a52d3cddd987aa24185c73b6d7ab462e, type: 3}
+      propertyPath: KeyPool.Array.data[1]
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 219705995, guid: a52d3cddd987aa24185c73b6d7ab462e, type: 3}
+      propertyPath: KeyPool.Array.data[2]
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 219705995, guid: a52d3cddd987aa24185c73b6d7ab462e, type: 3}
+      propertyPath: KeyPool.Array.data[3]
+      value: 104
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a52d3cddd987aa24185c73b6d7ab462e, type: 3}
@@ -1392,6 +1419,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7166825832022158687, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: time
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2451288670604009408, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1497,13 +1529,20 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7166825832022158687, guid: 0ca199228ec1abb468fcd261448f64a2,
-        type: 3}
-      propertyPath: time
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca199228ec1abb468fcd261448f64a2, type: 3}
+--- !u!114 &1782413081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8668157515875391057, guid: 0ca199228ec1abb468fcd261448f64a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1782413080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515a9ddc75e062d49bc4076ada6ba593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1895896878 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2451288670604009408, guid: 0ca199228ec1abb468fcd261448f64a2,
@@ -1548,6 +1587,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  RandomizeKeys: 1
 --- !u!1001 &2020822221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1724,7 +1764,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnTimerComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 315286170}
+      objectReference: {fileID: 1782413081}
     - target: {fileID: 5426414580430246778, guid: 0c669c37d5bffd94e8023809223342ce,
         type: 3}
       propertyPath: OnTimerComplete.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName

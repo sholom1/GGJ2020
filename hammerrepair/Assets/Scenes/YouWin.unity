@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -279,7 +279,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 62ad9f9ee4ce8ba48afbcc4ec34c9eeb, type: 3}
+    m_Font: {fileID: 12800000, guid: 69a566120fd263547a2e5e2d078b0cf2, type: 3}
     m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
@@ -335,7 +335,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 131.35}
-  m_SizeDelta: {x: 730, y: 235.2}
+  m_SizeDelta: {x: 1177.6, y: 235.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020397308
 MonoBehaviour:
@@ -356,7 +356,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 62ad9f9ee4ce8ba48afbcc4ec34c9eeb, type: 3}
+    m_Font: {fileID: 12800000, guid: 69a566120fd263547a2e5e2d078b0cf2, type: 3}
     m_FontSize: 114
     m_FontStyle: 0
     m_BestFit: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TOTAL TIME
+  m_Text: TOTAL TIME SPEND
 --- !u!222 &1020397309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -516,7 +516,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 62ad9f9ee4ce8ba48afbcc4ec34c9eeb, type: 3}
+    m_Font: {fileID: 12800000, guid: 69a566120fd263547a2e5e2d078b0cf2, type: 3}
     m_FontSize: 238
     m_FontStyle: 0
     m_BestFit: 0
@@ -802,7 +802,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 62ad9f9ee4ce8ba48afbcc4ec34c9eeb, type: 3}
+    m_Font: {fileID: 12800000, guid: 69a566120fd263547a2e5e2d078b0cf2, type: 3}
     m_FontSize: 134
     m_FontStyle: 0
     m_BestFit: 0

@@ -6,12 +6,27 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public int levelTime = 10;
+    [Header("Play different wining sign")]
+    public int amazingTime = 2;
+    public int goodJobTime = 6;
+    public int okTime = 4;
+    public int niceTryTime = 2;
+
     public UnityEvent Win;
     public UnityEvent Lose;
 
+    public UnityEvent WinAmazing;
+    public UnityEvent WinGoodJob;
+    public UnityEvent WinOk;
+    public UnityEvent WinNiceTry;
+    public UnityEvent WinMmm;
+
+    public Timer timer;
+
     void Start()
     {
-        //GameController.Instance.SetLevelData(this);
+
     }
 
     private bool isAddTime = false;
@@ -19,7 +34,21 @@ public class LevelManager : MonoBehaviour
     {
         Win.Invoke();
 
-        if(!isAddTime)
+        int nowTime = (int)timer.nowTime;
+        if (nowTime >= amazingTime)
+        {
+            WinAmazing.Invoke();
+        }
+        else if (nowTime >= goodJobTime)
+            WinGoodJob.Invoke();
+        else if (nowTime >= okTime)
+            WinOk.Invoke();
+        else if (nowTime >= niceTryTime)
+            WinNiceTry.Invoke();
+        else
+            WinMmm.Invoke();
+
+        if (!isAddTime)
         {
             Timer timer = GetComponentInChildren<Timer>();
             GameController.Instance.AddTotalTime(timer.GetSpendTime());
@@ -56,4 +85,6 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    
 }

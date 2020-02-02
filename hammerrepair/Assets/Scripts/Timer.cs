@@ -11,8 +11,10 @@ public class Timer : MonoBehaviour
     public UnityEvent TimeOut;
 
     bool isCountDown = false;
-    private float nowTime;
+    [HideInInspector]
+    public float nowTime;
     private TextMeshProUGUI timerText;
+
     void Start()
     {
         nowTime = time +0.5f;
