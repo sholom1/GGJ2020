@@ -377,7 +377,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 62ad9f9ee4ce8ba48afbcc4ec34c9eeb,
+      objectReference: {fileID: 12800000, guid: 69a566120fd263547a2e5e2d078b0cf2,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ca199228ec1abb468fcd261448f64a2, type: 3}
