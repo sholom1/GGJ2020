@@ -180,8 +180,8 @@ MonoBehaviour:
   OnPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1959446765}
-        m_MethodName: 
+      - m_Target: {fileID: 1959446768}
+        m_MethodName: SetAlpha
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -194,8 +194,8 @@ MonoBehaviour:
   OnEnabled:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1959446765}
-        m_MethodName: 
+      - m_Target: {fileID: 1959446768}
+        m_MethodName: SetAlpha
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -208,8 +208,8 @@ MonoBehaviour:
   OnReleased:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1959446765}
-        m_MethodName: 
+      - m_Target: {fileID: 1959446768}
+        m_MethodName: SetAlpha
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
