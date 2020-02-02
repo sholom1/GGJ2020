@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -127,6 +127,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1641395054}
     m_Modifications:
+    - target: {fileID: 691237376336845172, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 979b63eab86ce495ab6fe2abb17d6a77, type: 3}
     - target: {fileID: 3321032808016026831, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_Name
@@ -894,12 +899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d03e322e93f274a86727b53ed7b9cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &574146074 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2101591721165211588, guid: 0ca199228ec1abb468fcd261448f64a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 170182461}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &784204427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,7 +2138,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnTimerComplete.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 574146074}
+      objectReference: {fileID: 0}
     - target: {fileID: 5426414580430246778, guid: 0c669c37d5bffd94e8023809223342ce,
         type: 3}
       propertyPath: OnTimerComplete.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
