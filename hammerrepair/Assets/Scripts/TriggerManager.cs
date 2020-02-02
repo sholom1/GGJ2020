@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TriggerManager : MonoBehaviour
 {
     public List<Trigger> Triggers;
     public int nextLevel;
+    public UnityEvent OnWin;
+
     private void Start()
     {
         //foreach (Trigger trigger in Triggers)
@@ -24,6 +27,6 @@ public class TriggerManager : MonoBehaviour
                 return;
             }
         }
-        GameController.Instance.LevelWin();
+        OnWin.Invoke();
     }
 }

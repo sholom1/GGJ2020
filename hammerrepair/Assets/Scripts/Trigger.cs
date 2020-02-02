@@ -28,6 +28,7 @@ public class Trigger : MonoBehaviour
     private void Awake()
     {
         Debug.Log("Enabled");
+        Letter.text = RequiredKey.ToString();
         OnEnabled.Invoke();   
     }
     public void OnDrawGizmos()
