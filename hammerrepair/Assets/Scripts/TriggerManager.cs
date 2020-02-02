@@ -19,6 +19,7 @@ public class TriggerManager : MonoBehaviour
     //Invalid key combos on Sam's computer (Windows 10 Dell Laptop):
     // - Y, G, M, H
     // - Y, T, J, V
+    // - Y, T, J, M
     private void Start()
     {
         if (RandomizeKeys)
