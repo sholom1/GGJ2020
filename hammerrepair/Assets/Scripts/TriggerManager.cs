@@ -23,6 +23,7 @@ public class TriggerManager : MonoBehaviour
     // - Y, T, J, M
     // - T, M, V
     // - R, T, I, M
+    // - R, G, I, U
     private void Start()
     {
         AddKeysToTriggers();
