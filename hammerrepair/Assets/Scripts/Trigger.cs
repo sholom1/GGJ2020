@@ -19,7 +19,7 @@ public class Trigger : MonoBehaviour
             Debug.Log($"Pressed trigger with letter {RequiredKey.ToString()}");
             OnPressed.Invoke();
         }
-        else if (Input.GetKeyUp(RequiredKey))
+        if (Input.GetKeyUp(RequiredKey))
         {
             Debug.Log($"Released trigger with letter {RequiredKey.ToString()}");
             OnReleased.Invoke();

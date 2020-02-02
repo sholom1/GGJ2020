@@ -11,6 +11,6 @@ public class TriggerSeparateImages : Trigger
     public void Replace()
     {
         Damaged.enabled = !Damaged.enabled;
-        Repaired.enabled = !Damaged.enabled;
+        Repaired.enabled = !Repaired.enabled;
     }
 }

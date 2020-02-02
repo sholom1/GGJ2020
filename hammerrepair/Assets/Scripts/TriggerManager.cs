@@ -9,24 +9,35 @@ public class TriggerManager : MonoBehaviour
     public int nextLevel;
     public UnityEvent OnWin;
 
+    // TODO(jkachmar): Try to find a simple algorithm to generate valid 
+    // key-combos that cannot register arbitrary combinations of simultaneous
+    // keypresses
+    //
+    // Valid key combos on jkachmar's computer (late 2016 MacBook Pro):
+    // - R, U, Y, G
     private void Start()
     {
-        //foreach (Trigger trigger in Triggers)
-        //{
-        //    trigger.RequiredKey = InputDictionary.instance.KeyPool[Random.Range(0, InputDictionary.instance.KeyPool.Count)];
-        //    InputDictionary.instance.KeyPool.Remove(trigger.RequiredKey);
-        //    trigger.Letter.text = trigger.RequiredKey.ToString();
-        //}
+        foreach (var trigger in Triggers)
+        {
+            var poolSize = InputDictionary.instance.KeyPool.Count;
+            var requiredKey = InputDictionary.instance.KeyPool[Random.Range(0, poolSize)];
+
+            trigger.RequiredKey = requiredKey;
+            trigger.Letter.text = requiredKey.ToString();
+            InputDictionary.instance.KeyPool.Remove(requiredKey);
+        }
     }
     void Update()
     {
-        foreach (Trigger trigger in Triggers)
+        var allKeysDown = true;
+        foreach (var trigger in Triggers)
         {
-            if (!Input.GetKey(trigger.RequiredKey))
-            {
-                return;
-            }
+            var isKeyDown = Input.GetKey(trigger.RequiredKey);
+            allKeysDown = allKeysDown && isKeyDown;
         }
-        OnWin.Invoke();
+        if (allKeysDown) {
+            Debug.Log("YOU WIN!!!");
+            OnWin.Invoke();
+        }
     }
 }
