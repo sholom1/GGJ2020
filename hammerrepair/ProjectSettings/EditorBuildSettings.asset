@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Pipe_Scene.unity
     guid: bbf465a6d6c4d3c40b50ace1de306d57
   - enabled: 1
-    path: Assets/Scenes/Sam_Scene.unity
-    guid: 09a22e26ddd7b3b4ea3d2ce593bdbd91
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
     path: Assets/Scenes/Tom_Scene.unity
     guid: e887c45ed66a3db4db7727d7f0e38aad
   - enabled: 1
