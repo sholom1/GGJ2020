@@ -73,9 +73,12 @@ public class TriggerManager : MonoBehaviour
             //{
             //    Debug.Log($"anti-trigger ${trigger.name} is ${Input.GetKey(trigger.RequiredKey)}");
             //}
-
-            OnWin.Invoke();
+            Win();
         }
+    }
+    public void Win()
+    {
+        OnWin.Invoke();
     }
     public void DisableInputsForAllTriggers()
     {
