@@ -37,7 +37,8 @@ public class Trigger : MonoBehaviour
         if (Letter != null)
         {
             Letter.fontStyle = FontStyles.Bold;
-            Letter.text = RequiredKey.ToString().ToLower();
+            string triggerText = RequiredKey.ToString().ToLower();
+            Letter.text = triggerText[triggerText.Length-1].ToString();
         }
         OnEnabled.Invoke();   
     }
