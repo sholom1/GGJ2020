@@ -24,9 +24,13 @@ public class LevelManager : MonoBehaviour
 
     public Timer timer;
 
-    void Start()
+    private void Awake()
     {
         timer.time = levelTime;
+    }
+    void Start()
+    {
+        //timer.time = levelTime;
     }
 
     private bool isAddTime = false;
@@ -57,13 +61,22 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+
     public void LoseLevel()
     {
         Lose.Invoke();
         //GameController.Instance.GameLose();
     }
 
-   
+    private IEnumerator fade()
+    {
+        float deltaTime = 0.05f;
+        while(true)
+        {
+            GetComponent<AudioSource>().volume -= 0.1f;
+            yield return new WaitForSeconds(deltaTime);
+        }
+    }
 
     public void GoToNextLevelAfterDelay(float waitTime)
     {
