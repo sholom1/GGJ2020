@@ -523,6 +523,11 @@ PrefabInstance:
       propertyPath: Triggers.Array.data[3]
       value: 
       objectReference: {fileID: 14288588}
+    - target: {fileID: -7971871041976085044, guid: a52d3cddd987aa24185c73b6d7ab462e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4496043266024339819, guid: a52d3cddd987aa24185c73b6d7ab462e,
         type: 3}
       propertyPath: m_Name
