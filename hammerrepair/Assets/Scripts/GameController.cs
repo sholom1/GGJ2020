@@ -41,7 +41,7 @@ public class GameController : Singleton<GameController>
         nowGameState = GameState.Menu;
         nowLevelIndex = 0;
 
-        if(SceneManager.GetActiveScene().buildIndex != 0 )
+        if(SceneManager.GetActiveScene().name != "Start" )
         {
             nowGameState = GameState.OnLevel;
             levelsList = new List<int>();
