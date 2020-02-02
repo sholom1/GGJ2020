@@ -1517,6 +1517,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7938341504660508260, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: levelTime
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4972704879712056949, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_FontData.m_Alignment
