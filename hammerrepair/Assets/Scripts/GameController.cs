@@ -23,6 +23,12 @@ public class GameController : Singleton<GameController>
 
     private GameState nowGameState;
     private int nowLevelIndex;
+    private int totalTime = 0;
+
+    public int TotalTime 
+    {
+        get { return totalTime; }
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -83,19 +89,16 @@ public class GameController : Singleton<GameController>
 
             case GameState.WinLevel:
                 break;
-            case GameState.GameWin:
-                SceneManager.LoadScene(0);
-                nowGameState = GameState.Menu;
-                nowLevelIndex = 0;
 
+            case GameState.GameWin:
+                //ReturnToMenuScene();
                 break;
+
             case GameState.GameLose:
                 GameLose();
                 if (Input.anyKeyDown)
                 {
-                    SceneManager.LoadScene(0);
-                    nowGameState = GameState.Menu;
-                    nowLevelIndex = 0;
+                    ReturnToMenuScene();
                 }
                 break;
             default:
@@ -119,7 +122,7 @@ public class GameController : Singleton<GameController>
             nowGameState = GameState.OnLevel;
         }
         else
-            nowGameState = GameState.GameWin;
+            SceneManager.LoadScene("YouWin");
     }
 
     public void GameWin()
@@ -129,5 +132,18 @@ public class GameController : Singleton<GameController>
     public void GameLose()
     {
         nowGameState = GameState.GameLose;
+    }
+
+    public void AddTotalTime(int addTime)
+    {
+        totalTime += addTime;
+    }
+
+    public void ReturnToMenuScene()
+    {
+        SceneManager.LoadScene(0);
+        nowGameState = GameState.Menu;
+        nowLevelIndex = 0;
+        totalTime = 0;
     }
 }

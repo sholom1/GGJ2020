@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tom_Scene.unity
     guid: e887c45ed66a3db4db7727d7f0e38aad
+  - enabled: 1
+    path: Assets/Scenes/YouWin.unity
+    guid: b78dd44936c70e54585c4784c1aa8adb
   m_configObjects: {}

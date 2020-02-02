@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     private Text timerText;
     void Start()
     {
-        nowTime = time;
+        nowTime = time +0.5f;
         timerText = GetComponent<Text>() ;
         timerText.text = ((int)time).ToString();
     }
@@ -43,6 +43,11 @@ public class Timer : MonoBehaviour
     public void StopTimer()
     {
         isCountDown = false;
+    }
+
+    public int GetSpendTime()
+    {
+        return time - (int)nowTime;
     }
 
 }

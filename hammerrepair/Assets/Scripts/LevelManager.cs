@@ -14,9 +14,17 @@ public class LevelManager : MonoBehaviour
         //GameController.Instance.SetLevelData(this);
     }
 
+    private bool isAddTime = false;
     public void WinLevel()
     {
         Win.Invoke();
+
+        if(!isAddTime)
+        {
+            Timer timer = GetComponentInChildren<Timer>();
+            GameController.Instance.AddTotalTime(timer.GetSpendTime());
+            isAddTime = true;
+        }
     }
 
     public void LoseLevel()
