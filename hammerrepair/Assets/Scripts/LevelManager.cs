@@ -56,7 +56,8 @@ public class LevelManager : MonoBehaviour
         {
             Timer timer = GetComponentInChildren<Timer>();
             GameController gameController =  GameController.Instance;
-            GameController.Instance.AddTotalTime(timer.GetSpendTime());
+            if(timer != null)
+                GameController.Instance.AddTotalTime(timer.GetSpendTime());
             isAddTime = true;
         }
     }
