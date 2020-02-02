@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4496043266024339813}
   - component: {fileID: 4496043266024339812}
   - component: {fileID: 219705995}
-  - component: {fileID: -7971871041976085044}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -81,20 +80,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyPool: 61000000670000006900000079000000760000006d000000680000006a0000007200000074000000
---- !u!114 &-7971871041976085044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4496043266024339819}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef755b73ba0b4544e8a456d8b2765886, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Triggers: []
-  nextLevel: 0
-  OnWin:
-    m_PersistentCalls:
-      m_Calls: []
