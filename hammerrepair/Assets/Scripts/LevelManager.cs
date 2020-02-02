@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 {
     public int levelTime = 10;
     [Header("Play different wining sign")]
-    public int amazingTime = 2;
+    public int amazingTime = 8;
     public int goodJobTime = 6;
     public int okTime = 4;
     public int niceTryTime = 2;
@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-
+        timer.time = levelTime;
     }
 
     private bool isAddTime = false;

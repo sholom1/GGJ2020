@@ -7,6 +7,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    [HideInInspector]
     public int time = 10;
     public UnityEvent TimeOut;
 
