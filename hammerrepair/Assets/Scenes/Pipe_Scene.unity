@@ -1006,7 +1006,7 @@ PrefabInstance:
     - target: {fileID: 7938341504660508260, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: Win.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7938341504660508260, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
@@ -1022,17 +1022,23 @@ PrefabInstance:
         type: 3}
       propertyPath: Win.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 784204431}
     - target: {fileID: 7938341504660508260, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: Win.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: DisableInputsForAllTriggers
+      value: set_sprite
       objectReference: {fileID: 0}
     - target: {fileID: 7938341504660508260, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: Win.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.Sprite, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7938341504660508260, guid: 0ca199228ec1abb468fcd261448f64a2,
+        type: 3}
+      propertyPath: Win.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 21300000, guid: d66ed216bc2014e4b8b8256e93bd2ecf,
+        type: 3}
     - target: {fileID: 7166825832022158687, guid: 0ca199228ec1abb468fcd261448f64a2,
         type: 3}
       propertyPath: m_Enabled
