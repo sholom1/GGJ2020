@@ -10,6 +10,8 @@ public class Trigger : MonoBehaviour
     public UnityEvent OnReleased;
     public KeyCode RequiredKey;
 
+    bool hasInvokedOnPress = false;
+
     public TextMeshProUGUI Letter;
 
     private void Update()
@@ -17,13 +19,17 @@ public class Trigger : MonoBehaviour
         if (Input.GetKey(RequiredKey))
         {
             Debug.Log($"Pressed trigger with letter {RequiredKey.ToString()}");
-            OnPressed.Invoke();
+            if (!hasInvokedOnPress) {
+                OnPressed.Invoke();
+                hasInvokedOnPress = true;
+            }
         }
         if (Input.GetKeyUp(RequiredKey))
         {
             Debug.Log($"Released trigger with letter {RequiredKey.ToString()}");
             OnReleased.Invoke();
-        }   
+            hasInvokedOnPress = false;
+        }
     }
     private void Awake()
     {
