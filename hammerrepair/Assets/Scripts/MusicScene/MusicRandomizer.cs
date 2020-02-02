@@ -9,14 +9,14 @@ public class MusicRandomizer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int bad1 = Random.Range(0,7);
+        int bad1 = Random.Range(0,6);
         int bad2;
         do
         {
-            bad2 = Random.Range(0,7);
+            bad2 = Random.Range(0,6);
         } while (bad1 == bad2);
 
-        for (int i = 0; i< 7; i++) {
+        for (int i = 0; i< 6; i++) {
             if ((i==bad1) || (i==bad2)) {
                 Sources[2*i].enabled = false;
                 Debug.Log($"Disabled good tune ${Sources[2 * i].name}");
