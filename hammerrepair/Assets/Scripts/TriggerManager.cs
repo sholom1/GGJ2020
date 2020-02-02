@@ -20,6 +20,8 @@ public class TriggerManager : MonoBehaviour
     // - Y, G, M, H
     // - Y, T, J, V
     // - Y, T, J, M
+    // - T, M, V
+    // - R, T, I, M
     private void Start()
     {
         if (RandomizeKeys)
