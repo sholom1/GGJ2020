@@ -84,6 +84,10 @@ public class GameController : Singleton<GameController>
             case GameState.WinLevel:
                 break;
             case GameState.GameWin:
+                SceneManager.LoadScene(0);
+                nowGameState = GameState.Menu;
+                nowLevelIndex = 0;
+
                 break;
             case GameState.GameLose:
                 GameLose();
@@ -109,9 +113,9 @@ public class GameController : Singleton<GameController>
     public void LevelWin()
     {
         // go to next level
-        if (nowLevelIndex < levelsList.Count)
+        if (++nowLevelIndex < levelsList.Count)
         {
-            SceneManager.LoadScene(levelsList[++nowLevelIndex]);
+            SceneManager.LoadScene(levelsList[nowLevelIndex]);
             nowGameState = GameState.OnLevel;
         }
         else
