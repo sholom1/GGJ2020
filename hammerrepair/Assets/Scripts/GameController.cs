@@ -24,7 +24,7 @@ public class GameController : Singleton<GameController>
     private GameState nowGameState;
     private int nowLevelIndex;
     private int totalTime = 0;
-
+    public bool isHardMode = false;
     public int TotalTime 
     {
         get { return totalTime; }
@@ -145,5 +145,9 @@ public class GameController : Singleton<GameController>
         nowGameState = GameState.Menu;
         nowLevelIndex = 0;
         totalTime = 0;
+    }
+    public void SetHardMode(bool b)
+    {
+        isHardMode = b;
     }
 }
