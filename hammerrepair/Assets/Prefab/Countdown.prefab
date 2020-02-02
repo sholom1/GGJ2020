@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 1887102755281878899}
   - component: {fileID: 9100032110427617605}
   - component: {fileID: 5426414580430246778}
+  - component: {fileID: 2299324754126018788}
   m_Layer: 5
   m_Name: Countdown
   m_TagString: Untagged
@@ -231,18 +232,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 9100032110427617605}
-  Clip: {fileID: 0}
+  Clip: {fileID: 8300000, guid: 496ef4d2d642a6c419dac7c0e3a9d09a, type: 3}
   AudioNumberPairs:
-  - TimeStamp: 0.718
+  - TimeStamp: 0.35
     Number: {fileID: 21300000, guid: 063752dd54a09d34e9e2b14e0916b5cb, type: 3}
-  - TimeStamp: 0
+  - TimeStamp: 0.625
     Number: {fileID: 21300000, guid: 8b65d9446c0e9344fb6ee72fd193198b, type: 3}
-  - TimeStamp: 0
+  - TimeStamp: 1.25
     Number: {fileID: 21300000, guid: 21cec92f028da114d9e84b9a0cbb27d7, type: 3}
-  TimeBetweenClips: 0.1
+  TimeBetweenClips: 1
   TimerGUI: {fileID: 5091588216250050458}
   CircleUI: {fileID: 4692685746358168579}
   StartUI: {fileID: 8794631062349196939}
+  anim: {fileID: 0}
   OnTimerComplete:
     m_PersistentCalls:
       m_Calls:
@@ -257,6 +259,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &2299324754126018788
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887102755281878896}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5faba0b9cd21e2f4281f34150edc3fff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3119847354050382966
 GameObject:
   m_ObjectHideFlags: 0

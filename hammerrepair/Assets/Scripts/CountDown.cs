@@ -15,6 +15,8 @@ public class CountDown : MonoBehaviour
     public Image CircleUI;
     public Image StartUI;
 
+    public Animator anim;
+
     public UnityEvent OnTimerComplete;
     private void Start()
     {
@@ -34,7 +36,6 @@ public class CountDown : MonoBehaviour
             while (timer > 0)
             {
                 timer -= Time.deltaTime;
-                CircleUI.transform.rotation.SetEulerRotation(new Vector3(0, 0, Mathf.Rad2Deg * 360f * (timer / AudioNumberPairs[i].TimeStamp)));
                 yield return null;
             }
         }
