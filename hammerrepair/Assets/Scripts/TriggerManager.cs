@@ -8,12 +8,12 @@ public class TriggerManager : MonoBehaviour
     public int nextLevel;
     private void Start()
     {
-        foreach (Trigger trigger in Triggers)
-        {
-            trigger.RequiredKey = InputDictionary.instance.KeyPool[Random.Range(0, InputDictionary.instance.KeyPool.Count)];
-            InputDictionary.instance.KeyPool.Remove(trigger.RequiredKey);
-            trigger.Letter.text = trigger.RequiredKey.ToString();
-        }
+        //foreach (Trigger trigger in Triggers)
+        //{
+        //    trigger.RequiredKey = InputDictionary.instance.KeyPool[Random.Range(0, InputDictionary.instance.KeyPool.Count)];
+        //    InputDictionary.instance.KeyPool.Remove(trigger.RequiredKey);
+        //    trigger.Letter.text = trigger.RequiredKey.ToString();
+        //}
     }
     void Update()
     {
