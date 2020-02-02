@@ -64,6 +64,7 @@ public class LevelManager : MonoBehaviour
 
     public void LoseLevel()
     {
+        FindObjectOfType<TriggerManager>().DisableInputsForAllTriggers();
         Lose.Invoke();
         //GameController.Instance.GameLose();
     }
