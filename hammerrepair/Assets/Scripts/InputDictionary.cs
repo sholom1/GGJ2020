@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class InputDictionary : MonoBehaviour
 {
     public static InputDictionary instance;
-    private void Awake()
+    private void Start()
     {
         if (instance != null && instance != this)
             Destroy(this);
