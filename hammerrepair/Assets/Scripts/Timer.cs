@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
@@ -11,11 +12,11 @@ public class Timer : MonoBehaviour
 
     bool isCountDown = false;
     private float nowTime;
-    private Text timerText;
+    private TextMeshProUGUI timerText;
     void Start()
     {
         nowTime = time +0.5f;
-        timerText = GetComponent<Text>() ;
+        timerText = GetComponent<TextMeshProUGUI>() ;
         timerText.text = ((int)time).ToString();
     }
 

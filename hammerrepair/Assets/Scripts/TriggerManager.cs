@@ -44,4 +44,11 @@ public class TriggerManager : MonoBehaviour
             OnWin.Invoke();
         }
     }
+    public void DisableInputsForAllTriggers()
+    {
+        foreach(Trigger trigger in Triggers)
+        {
+            trigger.enabled = false;
+        }
+    }
 }
