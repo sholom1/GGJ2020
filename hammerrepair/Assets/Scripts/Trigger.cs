@@ -14,7 +14,7 @@ public class Trigger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(RequiredKey))
+        if (Input.GetKey(RequiredKey))
         {
             Debug.Log($"Pressed trigger with letter {RequiredKey.ToString()}");
             OnPressed.Invoke();

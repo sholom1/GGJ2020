@@ -8,6 +8,7 @@ public class TriggerManager : MonoBehaviour
     public List<Trigger> Triggers;
     public int nextLevel;
     public UnityEvent OnWin;
+    public bool RandomizeKeys = true;
 
     // TODO(jkachmar): Try to find a simple algorithm to generate valid 
     // key-combos that cannot register arbitrary combinations of simultaneous
@@ -17,14 +18,17 @@ public class TriggerManager : MonoBehaviour
     // - R, U, Y, G
     private void Start()
     {
-        foreach (var trigger in Triggers)
+        if (RandomizeKeys)
         {
-            var poolSize = InputDictionary.instance.KeyPool.Count;
-            var requiredKey = InputDictionary.instance.KeyPool[Random.Range(0, poolSize)];
+            foreach (var trigger in Triggers)
+            {
+                var poolSize = InputDictionary.instance.KeyPool.Count;
+                var requiredKey = InputDictionary.instance.KeyPool[Random.Range(0, poolSize)];
 
-            trigger.RequiredKey = requiredKey;
-            trigger.Letter.text = requiredKey.ToString();
-            InputDictionary.instance.KeyPool.Remove(requiredKey);
+                trigger.RequiredKey = requiredKey;
+                trigger.Letter.text = requiredKey.ToString();
+                InputDictionary.instance.KeyPool.Remove(requiredKey);
+            }
         }
     }
     void Update()
