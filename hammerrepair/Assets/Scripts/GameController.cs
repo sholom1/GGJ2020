@@ -43,6 +43,7 @@ public class GameController : Singleton<GameController>
 
         if(SceneManager.GetActiveScene().name != "Start" )
         {
+            Debug.Log("AAAAAA");
             nowGameState = GameState.OnLevel;
             levelsList = new List<int>();
             levelsList.Add(SceneManager.GetActiveScene().buildIndex);
@@ -56,6 +57,10 @@ public class GameController : Singleton<GameController>
             
             //CloseAllUI();
             //timer.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.Log("FFFF");
         }
     }
 
@@ -116,10 +121,11 @@ public class GameController : Singleton<GameController>
     public void LevelWin()
     {
         // go to next level
-        if (++nowLevelIndex < levelsList.Count)
+        if (++nowLevelIndex  < levelsList.Count)
         {
-            SceneManager.LoadScene(levelsList[nowLevelIndex]);
+            
             nowGameState = GameState.OnLevel;
+            SceneManager.LoadScene(levelsList[nowLevelIndex]);
         }
         else
             SceneManager.LoadScene("YouWin");

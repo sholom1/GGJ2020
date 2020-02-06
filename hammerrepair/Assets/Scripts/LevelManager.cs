@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
     public UnityEvent WinMmm;
 
     public Timer timer;
-
+    private bool isLevelLoading = false;
     private void Awake()
     {
         timer.time = levelTime;
@@ -84,13 +84,19 @@ public class LevelManager : MonoBehaviour
 
     public void GoToNextLevelAfterDelay(float waitTime)
     {
-        StartCoroutine(waitForNextLevel(waitTime));
+        if (!isLevelLoading)
+        {
+            StartCoroutine(waitForNextLevel(waitTime));
+        }
     }
 
     private IEnumerator waitForNextLevel(float waitTime)
     {
+        isLevelLoading = true;
         yield return new WaitForSeconds(waitTime);
+        
         GameController.Instance.LevelWin();
+        isLevelLoading = false;
     }
 
     public void RestartLevelAfterDelay(float waitTime)
