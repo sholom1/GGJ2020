@@ -63,6 +63,7 @@ sysinfo.txt
 *.log
 hammerrepair/Library/metadata
 hammerrepair/temp
+Submission
 
 # Crashlytics generated file
 crashlytics-build.properties
